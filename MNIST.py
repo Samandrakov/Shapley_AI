@@ -39,7 +39,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # Цикл обучения модели
-num_epochs = 5
+num_epochs = 20
 for epoch in range(num_epochs):
     print('epoch', epoch+1)
     for images, labels in train_loader:
@@ -50,7 +50,7 @@ for epoch in range(num_epochs):
         optimizer.step()
 
 # Сохранение обученной модели
-torch.save(model.state_dict(), 'mnist_model.pt')
+torch.save(model.state_dict(), 'mnist_model_20.pt')
 print("Обученная модель сохранена.")
 
 # Оценка точности модели на тестовом датасете

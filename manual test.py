@@ -20,7 +20,7 @@ class SimpleNet(nn.Module):
 
 # Загрузка сохраненной модели
 model = SimpleNet()
-model.load_state_dict(torch.load('mnist_model.pt'))
+model.load_state_dict(torch.load('mnist_model_20.pt'))
 model.eval()  # Установка модели в режим инференса
 
 # Загрузка и предобработка тестовых данных
