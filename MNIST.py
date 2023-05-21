@@ -41,7 +41,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 # Цикл обучения модели
 num_epochs = 20
 for epoch in range(num_epochs):
-    print('epoch', epoch+1)
+    print('Обучение эпохи -', epoch+1)
     for images, labels in train_loader:
         optimizer.zero_grad()
         outputs = model(images)
@@ -51,7 +51,7 @@ for epoch in range(num_epochs):
 
 # Сохранение обученной модели
 torch.save(model.state_dict(), 'mnist_model_20.pt')
-print("Обученная модель сохранена.")
+print("Обученная модель сохранена")
 
 # Оценка точности модели на тестовом датасете
 correct = 0
@@ -67,3 +67,5 @@ with torch.no_grad():
 
 accuracy = correct / total
 print(f'Accuracy: {accuracy}')
+print('Количество верных предсказаний - ', correct)
+print("Общее число предсказаний - ", total)
